@@ -1,0 +1,72 @@
+diff --git a/../work/decompile-1ae486b6/net/minecraft/server/DataWatcherRegistry.java b/decompile_nms/net/minecraft/server/DataWatcherRegistry.java
+index 96ba5be..b4d746e 100644
+--- a/../work/decompile-1ae486b6/net/minecraft/server/DataWatcherRegistry.java
++++ b/decompile_nms/net/minecraft/server/DataWatcherRegistry.java
+@@ -41,12 +41,12 @@ public class DataWatcherRegistry {
+             return this.b(packetdataserializer);
+         }
+     };
+-    public static final DataWatcherSerializer<Float> c = new DataWatcherSerializer() {
+-        public void a(PacketDataSerializer packetdataserializer, Float float) {
+-            packetdataserializer.writeFloat(float.floatValue());
++    public static final DataWatcherSerializer<float> c = new DataWatcherSerializer() {
++        public void a(PacketDataSerializer packetdataserializer, float Float) {
++            packetdataserializer.writeFloat(Float.floatValue());
+         }
+ 
+-        public Float b(PacketDataSerializer packetdataserializer) {
++        public float b(PacketDataSerializer packetdataserializer) {
+             return Float.valueOf(packetdataserializer.readFloat());
+         }
+ 
+diff --git a/../work/decompile-1ae486b6/net/minecraft/server/EntityInsentient.java b/decompile_nms/net/minecraft/server/EntityInsentient.java
+index 5857824..9d6c9bc 100644
+--- a/../work/decompile-1ae486b6/net/minecraft/server/EntityInsentient.java
++++ b/decompile_nms/net/minecraft/server/EntityInsentient.java
+@@ -66,9 +66,9 @@ public abstract class EntityInsentient extends EntityLiving {
+     }
+ 
+     public float a(PathType pathtype) {
+-        Float float = (Float) this.bB.get(pathtype);
++        float Float = (Float) this.bB.get(pathtype);
+ 
+-        return float == null ? pathtype.a() : float.floatValue();
++        return Float == null ? pathtype.a() : Float.floatValue();
+     }
+ 
+     public void a(PathType pathtype, float f) {
+diff --git a/../work/decompile-1ae486b6/net/minecraft/server/ItemLingeringPotion.java b/decompile_nms/net/minecraft/server/ItemLingeringPotion.java
+index b69d0dc..e485807 100644
+--- a/../work/decompile-1ae486b6/net/minecraft/server/ItemLingeringPotion.java
++++ b/decompile_nms/net/minecraft/server/ItemLingeringPotion.java
+@@ -13,7 +13,7 @@ public class ItemLingeringPotion extends ItemPotion {
+             --itemstack.count;
+         }
+ 
+-        world.a((EntityHuman) null, entityhuman.locX, entityhuman.locY, entityhuman.locZ, SoundEffects.do, SoundCategory.NEUTRAL, 0.5F, 0.4F / (ItemLingeringPotion.j.nextFloat() * 0.4F + 0.8F));
++        world.a((EntityHuman) null, entityhuman.locX, entityhuman.locY, entityhuman.locZ, SoundEffects.do_, SoundCategory.NEUTRAL, 0.5F, 0.4F / (ItemLingeringPotion.j.nextFloat() * 0.4F + 0.8F));
+         if (!world.isClientSide) {
+             EntityPotion entitypotion = new EntityPotion(world, entityhuman, itemstack);
+ 
+diff --git a/../work/decompile-1ae486b6/net/minecraft/server/SoundEffects.java b/decompile_nms/net/minecraft/server/SoundEffects.java
+index 87d9393..db393ca 100644
+--- a/../work/decompile-1ae486b6/net/minecraft/server/SoundEffects.java
++++ b/decompile_nms/net/minecraft/server/SoundEffects.java
+@@ -224,7 +224,7 @@ public class SoundEffects {
+     public static final SoundEffect dl;
+     public static final SoundEffect dm;
+     public static final SoundEffect dn;
+-    public static final SoundEffect do;
++    public static final SoundEffect do_;
+     public static final SoundEffect dp;
+     public static final SoundEffect dq;
+     public static final SoundEffect dr;
+@@ -702,7 +702,7 @@ public class SoundEffects {
+             dl = a("block.lever.click");
+             dm = a("entity.lightning.impact");
+             dn = a("entity.lightning.thunder");
+-            do = a("entity.lingeringpotion.throw");
++            do_ = a("entity.lingeringpotion.throw");
+             dp = a("entity.magmacube.death");
+             dq = a("entity.magmacube.hurt");
+             dr = a("entity.magmacube.jump");
